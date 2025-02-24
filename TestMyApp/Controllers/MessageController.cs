@@ -8,6 +8,7 @@ using TestMyApp.Business.Interface;
 
 namespace TestMyApp.Controllers
 {
+    [RoutePrefix("api/v1/message")]
     public class MessageController : ApiController
     {
         public readonly IMessageService _messageService;
@@ -18,7 +19,7 @@ namespace TestMyApp.Controllers
         }
 
         [HttpGet]
-        [Route("Message")]
+        [Route("messagedetails")]
         public IHttpActionResult GetMessage()
         {            
             return Ok(_messageService.GetMessage());
